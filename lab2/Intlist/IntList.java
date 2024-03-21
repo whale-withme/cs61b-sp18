@@ -101,6 +101,8 @@ public class IntList {
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
         /* Use two Intlist to simulate pointer in C */
+        if(A == null)
+            return B;
         IntList index = A, newList, ptr;
         newList = new IntList(index.first, null);
         ptr = newList;

@@ -19,6 +19,7 @@ public class IntList {
 
     /**
      * A List with first FIRST0 and rest REST0.
+     * Use the constructor
      */
     public IntList(int first0, IntList rest0) {
         first = first0;
@@ -64,6 +65,7 @@ public class IntList {
 
     /**
      * Returns a list equal to L with all elements squared. Non-destructive.
+     * SMART AND USE recursive
      */
     public static IntList squareListRecursive(IntList L) {
         if (L == null) {
@@ -82,7 +84,14 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        if(A == null)
+            return B;
+        IntList ptr = A;
+        while(ptr.rest != null){
+            ptr = ptr.rest;
+        }
+        ptr.rest = B;
+        return A;
     }
 
     /**
@@ -91,7 +100,33 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        /* Use two Intlist to simulate pointer in C */
+        IntList index = A, newList, ptr;
+        newList = new IntList(index.first, null);
+        ptr = newList;
+        index = index.rest;
+        while(index != null){
+            ptr.rest = new IntList(index.first, null);
+            ptr = ptr.rest;
+            index = index.rest;
+        }
+        index = B;
+        while (index != null) {
+            ptr.rest = new IntList(index.first, null);
+            ptr = ptr.rest;
+            index = index.rest;
+        }
+        return newList;
+
+        /*recursive function
+            *  if(A == null){
+                return B;
+            }
+            if(A.rest == null){
+                return new IntList(A.first, B);
+            }
+            return new IntList(A.first, catenate(A.rest, B));
+         */
     }
 
 

@@ -1,6 +1,6 @@
 /* You may need to use big params to see the effect obviously  */
 public class NBody {
-    public static final double TIME_INCE = 10000.0;
+    private static final double TIME_INCE = 10000.0;
 
     public static double readRadius(String path){
         In in = new In(path);

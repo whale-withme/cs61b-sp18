@@ -1,10 +1,10 @@
 public class Planet {
-    double xxPos;
-    double yyPos;
-    double xxVel;
-    double yyVel;
-    double mass;
-    String imgFileName;
+    private double xxPos;
+    private double yyPos;
+    private double xxVel;
+    private double yyVel;
+    private double mass;
+    private String imgFileName;
 
     /* Constor */
     public Planet(double xP, double yP, double xV, double yV, double m, String img){
@@ -82,7 +82,7 @@ public class Planet {
         this.yyPos += DetaYpos;
     }
 
-    public void Draw(){
+    public void draw(){
         /* Draw itself*/
         StdDraw.picture(xxPos, yyPos, this.imgFileName);
     }

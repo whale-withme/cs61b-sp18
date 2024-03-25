@@ -1,4 +1,4 @@
-
+/* You may need to use big params to see the effect obviously  */
 public class NBody {
     public static final double TIME_INCE = 10000.0;
 
@@ -40,7 +40,7 @@ public class NBody {
 
 
         StdDraw.enableDoubleBuffering();
-        for(double time = 0; time <= T; time += 10000*dt){
+        for(double time = 0; time <= T; time += dt){
             double[] xforces = new double[planets.length];
             double[] yforces = new double[planets.length];
             for(int i = 0; i < planets.length; i++){
@@ -58,7 +58,7 @@ public class NBody {
             StdDraw.clear();
             StdDraw.picture(0, 0, "images/starfield.jpg", 2*r, 2*r);
             for(int i = 0; i < planets.length; i++){
-                StdDraw.picture(planets[i].xxPos, planets[i].yyPos, planets[i].imgFileName);
+                planets[i].draw();
             }
             StdDraw.show();
             StdDraw.pause(10);

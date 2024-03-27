@@ -11,6 +11,20 @@ public class IntListTest {
      */
 
     @Test
+    public void testReverse(){
+        /* To reverse */
+        IntList init = IntList.of(1, 2, 3, 4);
+        IntList reve = IntList.of(4, 3, 2, 1);
+        assertEquals(IntList.reverse(init), reve);
+
+        /* To destructive */
+        assertEquals(IntList.reverse(init), init);
+
+        /* To null */
+        assertEquals(IntList.reverse(null), null);
+    }
+
+    @Test(timeout = 1000)
     public void testList() {
         IntList one = new IntList(1, null);
         IntList twoOne = new IntList(2, one);

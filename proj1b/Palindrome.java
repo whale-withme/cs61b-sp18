@@ -13,16 +13,16 @@ public class Palindrome {
     }
 
     /* Use string  */
-    public boolean isPalindromechar(String word){
-        boolean ispalind = true;
-        for(int i = 0, j = word.length()-1; i != j; i++, j--){
-            if(word.charAt(i) != word.charAt(j)){
-                ispalind = false;
-                break;
-            }
-        }
-        return ispalind;
-    }
+    // public boolean isPalindromechar(String word){
+    //     boolean ispalind = true;
+    //     for(int i = 0, j = word.length()-1; i != j; i++, j--){
+    //         if(word.charAt(i) != word.charAt(j)){
+    //             ispalind = false;
+    //             break;
+    //         }
+    //     }
+    //     return ispalind;
+    // }
 
     /* Character equals */
     public boolean isPalindrome(String word){
@@ -54,11 +54,5 @@ public class Palindrome {
             if(!cc.equalChars(i, j))    { ispalind = false; break;}
         }
         return ispalind;
-    }
-
-
-    public void main(){
-        boolean yes = isPalindrome("e");
-        System.out.println(yes);
     }
 }
